@@ -1,0 +1,113 @@
+@import './variables.scss';
+@import './reset.scss';
+@import './general.scss';
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  padding: 3rem;
+
+  &.card--orange { background-color: $clr-orange }
+  &.card--cyan { background-color: $clr-cyan }
+  &.card--dark-cyan { background-color: $clr-dark-cyan }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* ----- ICON WITH NO ANIMATION ----- */
+
+  // .card__icon {
+  //   height: 40px;
+  //   width: 64px;
+  //   margin-bottom: 10px;
+  //   background-repeat: no-repeat;
+
+  //   &.icon--sedans { background-image: url('../images/icon-sedans.svg') }
+  //   &.icon--suvs { background-image: url('../images/icon-suvs.svg') }
+  //   &.icon--luxury { background-image: url('../images/icon-luxury.svg') }
+  // }
+
+  /* ----- ICON WITH AN ANIMATION ----- */
+
+  .card__icon {
+    position: relative;
+    height: 40px;
+    width: 64px;
+
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      background: black;
+      opacity: 0.2;
+      border-radius: 50%;
+    }
+
+    &.icon--sedans::after { content: url('../images/car-sedan.svg'); }
+    &.icon--suvs::after { content: url('../images/car-suv.svg'); }
+    &.icon--luxury::after { content: url('../images/car-luxury.svg'); }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(45%, -35%);
+      animation: 1.5s driveIn;
+    }
+
+    @keyframes driveIn {
+      0% { transform: translate(-120%, -50%); }
+    }
+  }
+
+  .card__title {
+    font-family: $ff-headers;
+    font-size: $fs-headers;
+    font-weight: $fw-headers;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    color: $clr-light-gray;
+  }
+
+  .button {
+    border: 2px solid $clr-light-gray;
+    border-radius: 25px;
+    background-color: $clr-light-gray;
+    padding: 12px 32px;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &.button--orange { color: $clr-orange }
+    &.button--cyan { color: $clr-cyan }
+    &.button--dark-cyan { color: $clr-dark-cyan }
+
+    &:hover {
+      background: transparent;
+      color: $clr-light-white;
+      border-color: $clr-light-white;
+    }
+  }
+}
+
+  
+@media (min-width: 680px) {
+  .card {
+    flex: 1;
+    justify-content: space-between;
+  }
+}

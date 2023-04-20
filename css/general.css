@@ -1,0 +1,33 @@
+/* COLORS */
+/* TYPE */
+body {
+  padding: 1.5rem;
+  background-color: #f2f2f2;
+}
+
+.preview {
+  max-width: 327px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 680px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .preview {
+    flex-direction: row;
+    max-width: 920px;
+    min-height: 500px;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsImdlbmVyYWwuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLFdBQUE7QUFRQSxTQUFBO0FDUEE7RUFDRSxlQUFlO0VBQ2YseUJERzhCO0FFRmhDOztBREVBO0VBQ0UsZ0JBQWdCO0VBRWhCLGNBQWM7RUFDZCxhQUFhO0VBQ2Isc0JBQXNCO0VBRXRCLHNDREpvQztFQ0twQyxtQkRFbUI7RUNEbkIsZ0JESGM7RUNJZCxnQ0RYdUM7RUNhdkMsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBQ0ZsQjs7QURLQTtFQUNFO0lBQ0UsYUFBYTtJQUNiLHVCQUF1QjtJQUN2QixtQkFBbUI7RUNGckI7RURJQTtJQUNFLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsaUJBQWlCO0VDRm5CO0FBQ0YiLCJmaWxlIjoiZ2VuZXJhbC5jc3MifQ== */

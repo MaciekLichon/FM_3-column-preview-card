@@ -1,0 +1,213 @@
+/* COLORS */
+/* TYPE */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.67;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* COLORS */
+/* TYPE */
+body {
+  padding: 1.5rem;
+  background-color: #f2f2f2;
+}
+
+.preview {
+  max-width: 327px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 680px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .preview {
+    flex-direction: row;
+    max-width: 920px;
+    min-height: 500px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 3rem;
+  /* ----- ICON WITH NO ANIMATION ----- */
+  /* ----- ICON WITH AN ANIMATION ----- */
+}
+
+.card.card--orange {
+  background-color: #e38826;
+}
+
+.card.card--cyan {
+  background-color: #006970;
+}
+
+.card.card--dark-cyan {
+  background-color: #004241;
+}
+
+.card .card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card .card__icon {
+  position: relative;
+  height: 40px;
+  width: 64px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.card .card__icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background: black;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.card .card__icon.icon--sedans::after {
+  content: url("../images/car-sedan.svg");
+}
+
+.card .card__icon.icon--suvs::after {
+  content: url("../images/car-suv.svg");
+}
+
+.card .card__icon.icon--luxury::after {
+  content: url("../images/car-luxury.svg");
+}
+
+.card .card__icon::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(45%, -35%);
+  animation: 1.5s driveIn;
+}
+
+@keyframes driveIn {
+  0% {
+    transform: translate(-120%, -50%);
+  }
+}
+
+.card .card__title {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #f2f2f2;
+}
+
+.card .button {
+  border: 2px solid #f2f2f2;
+  border-radius: 25px;
+  background-color: #f2f2f2;
+  padding: 12px 32px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card .button.button--orange {
+  color: #e38826;
+}
+
+.card .button.button--cyan {
+  color: #006970;
+}
+
+.card .button.button--dark-cyan {
+  color: #004241;
+}
+
+.card .button:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 680px) {
+  .card {
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL3Jlc2V0LnNjc3MiLCJzdHlsZS5jc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsIi4uL3Nhc3Mvc3R5bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxXQUFBO0FBUUEsU0FBQTtBQ1RBOztDQ0lDO0FEREQ7RUFDRSxzQkFBc0I7QUNHeEI7O0FEREE7O0NDS0M7QURGRDtFQUNFLFNBQVM7QUNJWDs7QURGQTs7Q0NNQztBREhEO0VBQ0UsWUFBWTtBQ0tkOztBREhBOzs7O0NDU0M7QURKRDtFQUNFLGlCQUFpQjtFQUNqQixtQ0FBbUM7QUNNckM7O0FESkE7O0NDUUM7QURMRDtFQUNFLGNBQWM7RUFDZCxlQUFlO0FDT2pCOztBRExBOztDQ1NDO0FETkQ7RUFDRSxhQUFhO0FDUWY7O0FETkE7O0NDVUM7QURQRDtFQUNFLHlCQUF5QjtBQ1MzQjs7QURQQTs7Q0NXQztBRFJEO0VBQ0Usa0JBQWtCO0FDVXBCOztBRjNEQSxXQUFBO0FBUUEsU0FBQTtBR1BBO0VBQ0UsZUFBZTtFQUNmLHlCSEc4QjtBRTREaEM7O0FDNURBO0VBQ0UsZ0JBQWdCO0VBRWhCLGNBQWM7RUFDZCxhQUFhO0VBQ2Isc0JBQXNCO0VBRXRCLHNDSEpvQztFR0twQyxtQkhFbUI7RUdEbkIsZ0JISGM7RUdJZCxnQ0hYdUM7RUdhdkMsa0JBQWtCO0VBQ2xCLGdCQUFnQjtBRDREbEI7O0FDekRBO0VBQ0U7SUFDRSxhQUFhO0lBQ2IsdUJBQXVCO0lBQ3ZCLG1CQUFtQjtFRDREckI7RUMxREE7SUFDRSxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtFRDREbkI7QUFDRjs7QUV4RkE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFNBQVM7RUFFVCxhQUFhO0VBWWIsdUNBQUE7RUFhQSx1Q0FBQTtBRm1FRjs7QUVqR0E7RUFPbUIseUJKVlc7QUV3RzlCOztBRXJHQTtFQVFpQix5QkpWYTtBRTJHOUI7O0FFekdBO0VBU3NCLHlCSlZhO0FFOEduQzs7QUU3R0E7RUFZSSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFNBQVM7QUZxR2I7O0FFbkhBO0VBaUNJLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osV0FBVztFQUVYLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsbUJBQW1CO0FGcUZ2Qjs7QUU1SEE7RUEwQ00sV0FBVztFQUNYLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sT0FBTztFQUNQLFlBQVk7RUFDWixlQUFlO0VBQ2YsaUJBQWlCO0VBQ2pCLFlBQVk7RUFDWixrQkFBa0I7QUZzRnhCOztBRXhJQTtFQXFENEIsdUNBQXVDO0FGdUZuRTs7QUU1SUE7RUFzRDBCLHFDQUFxQztBRjBGL0Q7O0FFaEpBO0VBdUQ0Qix3Q0FBd0M7QUY2RnBFOztBRXBKQTtFQTBETSxrQkFBa0I7RUFDbEIsUUFBUTtFQUNSLE9BQU87RUFDUCwrQkFBK0I7RUFDL0IsdUJBQXVCO0FGOEY3Qjs7QUUzRkk7RUFDRTtJQUFLLGlDQUFpQztFRitGMUM7QUFDRjs7QUVsS0E7RUF1RUksNkNKakV5QztFSWtFekMsaUJKN0RlO0VJOERmLGdCSmhFWTtFSWlFWixnQkFBZ0I7RUFDaEIseUJBQXlCO0VBRXpCLGNKM0U0QjtBRXlLaEM7O0FFM0tBO0VBaUZJLHlCSi9FNEI7RUlnRjVCLG1CQUFtQjtFQUNuQix5QkpqRjRCO0VJa0Y1QixrQkFBa0I7RUFDbEIsc0JBQXNCO0VBQ3RCLGVBQWU7RUFDZixnQkFBZ0I7QUY4RnBCOztBRXJMQTtFQXlGdUIsY0o1Rk87QUU0TDlCOztBRXpMQTtFQTBGcUIsY0o1RlM7QUUrTDlCOztBRTdMQTtFQTJGMEIsY0o1RlM7QUVrTW5DOztBRWpNQTtFQThGTSx1QkFBdUI7RUFDdkIsZ0NKOUZtQztFSStGbkMsdUNKL0ZtQztBRXNNekM7O0FFakdBO0VBQ0U7SUFDRSxPQUFPO0lBQ1AsOEJBQThCO0VGb0doQztBQUNGIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

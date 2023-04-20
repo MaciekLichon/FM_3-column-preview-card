@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+body {
+  padding: 1.5rem;
+  background-color: $clr-light-gray;
+}
+
+.preview {
+  max-width: 327px;
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  font-family: $ff-regular;
+  font-size: $fs-regular;
+  font-weight: $fw-regular;
+  color: $clr-light-white;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 680px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .preview {
+    flex-direction: row;
+    max-width: 920px;
+    min-height: 500px;
+  }
+}
